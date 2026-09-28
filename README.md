@@ -94,14 +94,14 @@ Gross margin is not net profit margin. These dataset amounts are not revenue or 
 
 ## Preview
 
-![Executive overview](screenshots/Overview 1.png)
+![Executive overview](screenshots/Overview_1.png)
 
  Add other images only when the matching files exist:
-![Store performance](screenshots/Stores 2.png)
-![Product performance](screenshots/Category 3.png)
-![Inventory health](screenshots/Inventory 4.png)
-![Wastage analysis](screenshots/Wastage 5.png)
-![Customer analysis](screenshots/Customers 6.png)
+![Store performance](screenshots/Stores_2.png)
+![Product performance](screenshots/Category_3.png)
+![Inventory health](screenshots/Inventory_4.png)
+![Wastage analysis](screenshots/Wastage_5.png)
+![Customer analysis](screenshots/Customers_6.png)
 
 
 ## Reproduction and report access
