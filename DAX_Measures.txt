@@ -1,0 +1,123 @@
+-- Core Power BI DAX Measures
+Revenue = SUM(Sales[net_sales_aed])
+Gross Profit = SUM(Sales[gross_profit_aed])
+GP % = DIVIDE([Gross Profit],[Revenue])
+Transactions = DISTINCTCOUNT(Sales[sale_id])
+Units Sold = SUM(Sales[basket_units])
+Average Basket Value = DIVIDE([Revenue],[Transactions])
+Average Units per Basket = DIVIDE([Units Sold],[Transactions])
+Discount Value = SUM(Sales[discount_aed])
+Discount % = DIVIDE([Discount Value],[Revenue]+[Discount Value])
+
+Sales Target = SUM(Targets[sales_target_aed])
+Sales Target Achievement % = DIVIDE([Revenue],[Sales Target])
+Sales Variance = [Revenue]-[Sales Target]
+
+Revenue PM = CALCULATE([Revenue],DATEADD(Calendar[date],-1,MONTH))
+MoM Growth % = DIVIDE([Revenue]-[Revenue PM],[Revenue PM])
+Revenue PY = CALCULATE([Revenue],DATEADD(Calendar[date],-1,YEAR))
+
+
+Inventory Value = SUM(Inventory_Snapshots[stock_value_aed])
+Closing Qty = SUM(Inventory_Snapshots[closing_qty])
+COGS = SUM(Sales_Items[cogs_aed])
+Average Inventory Value = AVERAGEX(VALUES(Inventory_Snapshots[snapshot_date]),[Inventory Value])
+Inventory Turnover = DIVIDE([COGS],[Average Inventory Value])
+Stock Cover Days = DIVIDE([Closing Qty],DIVIDE(SUM(Inventory_Snapshots[sold_qty]),30.4))
+OOS SKU-Store Count = CALCULATE(COUNTROWS(Inventory_Snapshots),Inventory_Snapshots[stock_status]="Out of Stock")
+Low Stock SKU-Store Count = CALCULATE(COUNTROWS(Inventory_Snapshots),Inventory_Snapshots[stock_status]="Low Stock")
+Excess Stock SKU-Store Count = CALCULATE(COUNTROWS(Inventory_Snapshots),Inventory_Snapshots[stock_status]="Excess Stock")
+Closing Stock Qty = 
+VAR SnapshotDate = [Latest Snapshot Date]
+RETURN
+    IF(
+        NOT ISBLANK(SnapshotDate),
+        CALCULATE(
+            SUM('Inventory_Snapshots'[closing_qty]),
+            KEEPFILTERS('Inventory_Snapshots'[snapshot_date] = SnapshotDate)
+        )
+    )
+
+Excess Stock Positions = 
+CALCULATE(
+    [Stock Positions],
+    KEEPFILTERS('Inventory_Snapshots'[stock_status] = "Excess Stock")
+)
+
+Healthy Positions = 
+CALCULATE(
+    [Stock Positions],
+    KEEPFILTERS('Inventory_Snapshots'[stock_status] = "Healthy")
+)
+
+Inventory As Of = 
+VAR SnapshotDate = [Latest Snapshot Date]
+RETURN
+    IF(
+        ISBLANK(SnapshotDate),
+        "No snapshot in selected period",
+        "Stock as of " & FORMAT(SnapshotDate, "dd MMM yyyy")
+    )
+
+Inventory Value AED = 
+VAR SnapshotDate = [Latest Snapshot Date]
+RETURN
+    IF(
+        NOT ISBLANK(SnapshotDate),
+        CALCULATE(
+            SUM('Inventory_Snapshots'[stock_value_aed]),
+            KEEPFILTERS('Inventory_Snapshots'[snapshot_date] = SnapshotDate)
+        )
+    )
+
+Item Cost = 
+SUM('Sales_Items'[cogs_aed])
+
+
+
+Waste Value = SUM(Wastage[waste_value_aed])
+Waste % of Sales = DIVIDE([Waste Value],[Revenue])
+Return Value = SUM(Returns[return_value_aed])
+Return Rate % = DIVIDE([Return Value],[Revenue])
+Expiry Loss AED = 
+CALCULATE(
+    [Waste Value AED],
+    KEEPFILTERS('Wastage'[reason] = "Expiry")
+)
+
+Expiry Share of Selected Waste % = 
+DIVIDE([Expiry Loss AED], [Waste Value AED])
+
+
+
+Active Identified Customers = 
+DISTINCTCOUNTNOBLANK('Sales'[customer_id])
+
+Average Basket Lines = 
+AVERAGE('Sales'[basket_lines])
+
+Average Basket Units = 
+AVERAGE('Sales'[basket_units])
+
+Identified ABV AED = 
+DIVIDE([Identified Revenue AED], [Identified Transactions])
+
+
+Identified Revenue AED = 
+CALCULATE(
+    [Revenue],
+    KEEPFILTERS('Sales'[customer_id] <> BLANK())
+)
+
+Identified Transactions = 
+CALCULATE(
+    [Transactions],
+    KEEPFILTERS('Sales'[customer_id] <> BLANK())
+)
+
+
+Category Revenue Share % = 
+DIVIDE(
+    [Item Revenue],
+    CALCULATE([Item Revenue], ALLSELECTED('Categories')))
+
