@@ -85,19 +85,6 @@ Gross margin is not net profit margin. These dataset amounts are not revenue or 
 
 **Separate findings from explanations.** Differences in margin, stock or basket value warrant investigation; they do not, by themselves, establish why a result occurred or prove a business improvement.
 
-## Project contents
-
-| Folder | Intended contents |
-|---|---|
-| `powerbi/` | Final report and report-opening instructions |
-| `screenshots/` | Current screenshots of the six pages and the model |
-| `sql/` | The SQL Server scripts actually used and tested |
-| `dax/` | Measures exported/copied from the final model |
-| `data/` | Dataset provenance, file manifest and access/rebuild instructions |
-| `docs/` | Metric definitions and release-validation checklist |
-| `assets/` | Project logo and teal theme |
-
-See [dataset notes](data/README.md), [report notes](powerbi/README.md), [metric definitions](docs/metric-definitions.md) and [release validation](docs/release-validation.md).
 
 ## Preview
 
