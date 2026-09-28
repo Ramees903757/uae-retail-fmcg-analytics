@@ -1,6 +1,6 @@
 # UAE Retail & FMCG Business Intelligence
 
-<img src="assets/uae_retail_growth_logo.png" alt="UAE Retail and FMCG BI project logo" width="390">
+<img src="D:\Vestano Files\Ramees\Vestano\New folder\Project\UAE_Retail_FMCG_BI_Portfolio_Project\Images\Logo.png">
 
 **SQL Server · Power BI · Power Query · DAX**
 
