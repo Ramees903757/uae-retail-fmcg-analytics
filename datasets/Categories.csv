@@ -1,0 +1,19 @@
+category_id,category_name,department,typical_margin_pct,shelf_life_days,is_perishable
+CAT01,Fresh Produce,Fresh Food,0.28,7,1
+CAT02,Dairy & Eggs,Fresh Food,0.22,14,1
+CAT03,Bakery,Fresh Food,0.35,5,1
+CAT04,Meat & Poultry,Fresh Food,0.24,5,1
+CAT05,Seafood,Fresh Food,0.26,3,1
+CAT06,Frozen Foods,Food,0.27,180,0
+CAT07,Grocery Staples,Food,0.18,365,0
+CAT08,Beverages,Food,0.25,270,0
+CAT09,Snacks & Confectionery,Food,0.32,240,0
+CAT10,Personal Care,Non Food,0.38,720,0
+CAT11,Household Cleaning,Non Food,0.34,720,0
+CAT12,Baby Care,Non Food,0.29,540,0
+CAT13,Health & Wellness,Non Food,0.36,540,0
+CAT14,Home & Kitchen,General Merchandise,0.42,999,0
+CAT15,Electronics & Small Appliances,General Merchandise,0.26,999,0
+CAT16,Stationery & Office,General Merchandise,0.4,999,0
+CAT17,Fashion & Accessories,General Merchandise,0.48,999,0
+CAT18,Pet Care,Non Food,0.33,540,0
