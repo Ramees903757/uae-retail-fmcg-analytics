@@ -92,16 +92,31 @@ Gross margin is not net profit margin. These dataset amounts are not revenue or 
 **Separate findings from explanations.** Differences in margin, stock or basket value warrant investigation; they do not, by themselves, establish why a result occurred or prove a business improvement.
 
 
-## Preview
+## Dashboard Screenshots
 
-![Executive overview](screenshots/Overview_1.png)
+### 1. Executive Overview
 
- Add other images only when the matching files exist:
-![Store performance](screenshots/Stores_2.png)
-![Product performance](screenshots/Category_3.png)
-![Inventory health](screenshots/Inventory_4.png)
-![Wastage analysis](screenshots/Wastage_5.png)
-![Customer analysis](screenshots/Customers_6.png)
+![Executive Overview dashboard](Screenshots/Overview_1.png)
+
+### 2. Store Performance
+
+![Store Performance dashboard](Screenshots/Stores_2.png)
+
+### 3. Category & Product Analysis
+
+![Category and Product Analysis dashboard](Screenshots/Category_3.png)
+
+### 4. Inventory Analysis
+
+![Inventory Analysis dashboard](Screenshots/Inventory_4.png)
+
+### 5. Wastage Analysis
+
+![Wastage Analysis dashboard](Screenshots/Wastage_5.png)
+
+### 6. Customer Analysis
+
+![Customer Analysis dashboard](Screenshots/Customers_6.png)
 
 
 ## Reproduction and report access
