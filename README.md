@@ -1,6 +1,12 @@
 # UAE Retail & FMCG Business Intelligence
 
-<img src="D:\Vestano Files\Ramees\Vestano\New folder\Project\UAE_Retail_FMCG_BI_Portfolio_Project\Images\Logo.png">
+<p align="center">
+  <img
+    src="Screenshots/Logo.png"
+    alt="UAE Retail & FMCG BI project logo"
+    width="360"
+  />
+</p>
 
 **SQL Server · Power BI · Power Query · DAX**
 
@@ -88,19 +94,15 @@ Gross margin is not net profit margin. These dataset amounts are not revenue or 
 
 ## Preview
 
-The current six-page screenshots must be added before publishing this draft. Use the names documented in `screenshots/README.md`.
+![Executive overview](screenshots/Overview 1.png)
 
-<!-- After screenshots/01-overview.png exists, replace this notice with:
-![Executive overview](screenshots/01-overview.png)
--->
+ Add other images only when the matching files exist:
+![Store performance](screenshots/Stores 2.png)
+![Product performance](screenshots/Category 3.png)
+![Inventory health](screenshots/Inventory 4.png)
+![Wastage analysis](screenshots/Wastage 5.png)
+![Customer analysis](screenshots/Customers 6.png)
 
-<!-- Add other images only when the matching files exist:
-![Store performance](screenshots/02-stores.png)
-![Product performance](screenshots/03-products.png)
-![Inventory health](screenshots/04-inventory.png)
-![Wastage analysis](screenshots/05-wastage.png)
-![Customer analysis](screenshots/06-customers.png)
--->
 
 ## Reproduction and report access
 
